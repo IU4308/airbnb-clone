@@ -17,7 +17,7 @@ function HeroItem({ item }: { item: ItemType }) {
                 <HeartIcon className='w-6 absolute text-white top-2 right-2' />
                 <Image
                     src={images[0]} alt='hero' width={1024} height={1024}
-                    className='object-cover h-[400] rounded-lg'
+                    className='object-cover h-[40vh] rounded-lg'
                 />
                 <h1 className=' flex justify-between'>
                     <span className='font-bold'>{location}</span>
