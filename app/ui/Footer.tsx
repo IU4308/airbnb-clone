@@ -4,17 +4,10 @@ import { FaGithub } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
-import { formateDate } from "../lib/utils";
-
 
 function Footer() {
     const pathname = usePathname()
     const today = new Date();
-    const todayStr = today.toDateString().split(' ')
-
-    // const { weekDay, month, day, year } = formateDate('2025-01-05')
-
-
     return (
         <footer className={clsx('w-full   bg-gray-200  text-center py-2 px-8 ',
             { 'relative max-md:pb-24': pathname.startsWith('/rooms') },

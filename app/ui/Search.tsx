@@ -1,7 +1,4 @@
-// import { MagnifyingGlassCircleIcon } from '@heroicons/react/24/outline'
 import { MagnifyingGlassCircleIcon } from '@heroicons/react/16/solid'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-import React from 'react'
 
 function Search() {
     return (
