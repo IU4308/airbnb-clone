@@ -16,7 +16,7 @@ function DropDown() {
                     </Link>
                 </li>
                 <li className='p-2 hover:bg-gray-200 active:bg-gray-100'>Lend your house</li>
-                <li className='border-t-2 p-2 hovering'>Log In</li>
+
             </ul>
         </>
     )
