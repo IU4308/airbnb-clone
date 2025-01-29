@@ -15,7 +15,11 @@ function DropDown() {
                         Wishlist
                     </Link>
                 </li>
-                <li className='p-2 hover:bg-gray-200 active:bg-gray-100'>Lend your house</li>
+                <li className='p-2 hover:bg-gray-200 active:bg-gray-100'>
+                    <Link href='/create' className='block'>
+                        Lend your house
+                    </Link>
+                </li>
 
             </ul>
         </>

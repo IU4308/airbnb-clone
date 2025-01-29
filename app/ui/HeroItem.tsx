@@ -30,14 +30,16 @@ async function HeroItem({ rent }: { rent: RentType }) {
                     <HeartIcon />
                 </button> */}
                 <Image
-                    src={images[0]} alt='hero' width={1024} height={1024}
+                    src={images[0]} alt={images[0].slice(0, 10)} width={1024} height={1024}
                     className='object-cover h-[40vh] max-h-[500px] rounded-lg'
                 />
                 <h1 className=' flex justify-between'>
                     <span className='font-bold'>{location}</span>
                     <span className='flex'>
                         <StarIcon className='w-4' />
-                        <span>{rating}</span>
+                        <span>
+                            {rating ? rating : 'N/A'}
+                        </span>
                     </span>
                 </h1>
                 <p className='text-gray-500'>

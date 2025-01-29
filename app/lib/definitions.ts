@@ -40,6 +40,7 @@ export type WishlistItem = {
     id: number;
     title: string;
     image: string;
+    rent_id: number;
 }
 
 export type WishListItemCount = {

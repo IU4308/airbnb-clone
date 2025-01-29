@@ -14,7 +14,7 @@ function RentDetails({
     bedrooms: number;
     beds: number;
     bathrooms: number;
-    rating: number;
+    rating: number | undefined;
     reviewsCount: number;
     description: string;
     amenities: string[];
@@ -40,7 +40,7 @@ function RentDetails({
                 <ul className='flex gap-4'>
                     <li key='rating' className='flex gap-1'>
                         <StarIcon className='w-3' />
-                        <span>{rating}</span>
+                        <span>{rating ? rating : 'N/A'}</span>
                     </li>
                     <li key='review-count' className='list-disc list-inside'>
                         <span>{reviewsCount}</span>&nbsp;

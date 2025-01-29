@@ -9,7 +9,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
 
     return (
         <main className='p-10 max-w-7xl mx-auto'>
-            <RentReviews rentReviews={rentReviews!} />
+            <RentReviews rentReviews={rentReviews} />
         </main>
     )
 }

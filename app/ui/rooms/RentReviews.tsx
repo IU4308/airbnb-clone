@@ -16,7 +16,7 @@ function Review({
                 <Image
                     className='rounded-full w-10 object-cover'
                     src={profile_image}
-                    alt='avatar1'
+                    alt={profile_image}
                     width={512}
                     height={512}
                 />
@@ -40,23 +40,20 @@ function Review({
 function RentReviews({
     rentReviews
 }: {
-    rentReviews: ReviewType[]
+    rentReviews: ReviewType[] | undefined
 }) {
-
     return (
         <>
-            <ul className='grid grid-cols-2 max-sm:grid-cols-1 gap-6 py-4 '>
-                {rentReviews.map((review) => (
-                    <li key={review.comment} className='pr-8'>
-                        <Review review={review} />
-                    </li>
-                ))}
+            {rentReviews?.length
+                ? <ul className='grid grid-cols-2 max-sm:grid-cols-1 gap-6 py-4 '>
+                    {rentReviews.map((review) => (
+                        <li key={review.comment} className='pr-8'>
+                            <Review review={review} />
+                        </li>
+                    ))}
 
-                {/* <li className='pr-8'>
-                    <Review />
-                </li> */}
-
-            </ul>
+                </ul>
+                : <p className='text-2xl'>No Reviews</p>}
 
         </>
 

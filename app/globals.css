@@ -14,19 +14,3 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-
-/* .max-w-1000 {
-  @apply max-w-[1000] !important
-}
-
-.max-w-1280 {
-  @apply max-w-[1280] !important
-}
-
-.max-w-2560 {
-  @apply max-w-[2560] !important
-}
-
-.max-h-500 {
-  @apply max-h-[500] !important
-} */

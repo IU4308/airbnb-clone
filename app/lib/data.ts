@@ -75,7 +75,7 @@ export async function fetchWishlistItemCount(id: number) {
 export async function fetchWishlistItems() {
     try {
         const data = await sql<WishlistItem>`
-            SELECT wishlist.id, wishlist.title, wishlist.image
+            SELECT *
             FROM wishlist;
         `;
         return data.rows

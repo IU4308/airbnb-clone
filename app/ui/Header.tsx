@@ -23,7 +23,7 @@ function Header() {
                 'sticky top-0': pathname === '/'
             },
             { 'max-w-7xl': pathname.startsWith('/rooms') },
-            { 'max-w-[2560]': !pathname.startsWith('/rooms') },
+            { 'max-w-8xl': !pathname.startsWith('/rooms') },
 
         )}>
             <Link className='z-30' href='/'>
@@ -36,7 +36,10 @@ function Header() {
                     <Search />
                 )}
                 <div className='flex items-center space-x-4 cursor-pointer'>
-                    <span className='max-md:hidden'>Lend your house</span>
+                    <Link href='/create' className='block max-md:hidden'>
+                        Lend your house
+                    </Link>
+                    {/* <span className='max-md:hidden'>Lend your house</span> */}
                     <div
                         onClick={() => setIsActive(!isActive)}
                         className="border flex drop-shadow-md shadow-black rounded-full p-2 space-x-2">

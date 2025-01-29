@@ -16,7 +16,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
                     key={image}
                     className='object-contain h-[80vh]'
                     src={image}
-                    alt='image1-1'
+                    alt={image.slice(0, 10)}
                     width={1024}
                     height={1024}
                 />

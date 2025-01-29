@@ -50,7 +50,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
                         bedrooms={bedrooms!}
                         beds={beds!}
                         bathrooms={bathrooms!}
-                        rating={rating!}
+                        rating={rating}
                         reviewsCount={reviewsCount!}
                         description={description!}
                         amenities={amenities!}
@@ -62,7 +62,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
                     />
                 </div>
                 <RentReviews
-                    rentReviews={rentReviews!}
+                    rentReviews={rentReviews}
                 />
                 {reviewsCount > 6 &&
                     <Link href={`/reviews/${rent_id}`}>
