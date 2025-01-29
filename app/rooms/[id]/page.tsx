@@ -5,14 +5,24 @@ import ReservationCard from '@/app/ui/rooms/ReservationCard';
 import RentReviews from '@/app/ui/rooms/RentReviews';
 import Link from 'next/link';
 import { list } from '@/app/lib/placeholder'
+import { reviews } from '@/app/lib/placeholder-data'
+import { fetchRentById, fetchReviewsById } from '@/app/lib/data';
+import { formateDate } from '@/app/lib/utils';
 
 async function page(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
-    const id = params.id
-    const item = list.find((item) => item.id === Number(id))
-    const { title, images, location, price, bedrooms, beds, bathrooms, rating, reviews, description, amenities, check_in, check_out } = { ...item }
-    const reviewsCount = reviews?.length ?? 0
-    // console.log(images)
+    const id = params.id;
+    const rent = await fetchRentById(Number(id));
+    // console.log(rent)
+    // const item = list.find((item) => item.id === Number(id))
+    // const rentReviews = reviews.filter(review => review.rent_id === Number(id))
+    const rentReviews = await fetchReviewsById(Number(id));
+    // console.log(reviews)
+    const { title, images, location, price, bedrooms, beds, bathrooms, rating, description, amenities, check_in, check_out } = { ...rent };
+    const reviewsCount = rentReviews?.length ?? 0
+    const check_in_date = formateDate(check_in!)
+    const check_out_date = formateDate(check_out!)
+    console.log(check_in_date, check_out_date)
     return (
         <main className='flex justify-center'>
             <div className="w-[1280] max-xl:w-[1024] max-md:w max-lg:w-[768] max-md:w-full px-4 py-6 flex flex-col gap-6">
@@ -40,12 +50,12 @@ async function page(props: { params: Promise<{ id: string }> }) {
                     />
                     <ReservationCard
                         price={price!}
-                        check_in={check_in!}
-                        check_out={check_out!}
+                        check_in_date={check_in_date!}
+                        check_out_date={check_out_date!}
                     />
                 </div>
                 <RentReviews
-                    reviews={reviews!}
+                    rentReviews={rentReviews!}
                 />
                 {reviewsCount > 6 &&
                     <Link href={`/reviews/${id}`}>

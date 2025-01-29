@@ -1,18 +1,19 @@
 import React from 'react'
 import { AddDate } from '../buttons'
 import { formateDate } from '@/app/lib/utils';
+import { DateType } from '@/app/lib/definitions';
 
 function ReservationCard({
     price,
-    check_in,
-    check_out
+    check_in_date,
+    check_out_date
 }: {
     price: number;
-    check_in: string;
-    check_out: string;
+    check_in_date: DateType;
+    check_out_date: DateType;
 }) {
-    const check_in_date = formateDate(check_in)
-    const check_out_date = formateDate(check_out)
+    // const check_in_date = formateDate(check_in)
+    // const check_out_date = formateDate(check_out)
     return (
         <div className='w-[40%] max-md:fixed max-md:z-40 max-md:bottom-0 max-md:left-0 max-md:bg-white max-md:w-full border border-gray-200 drop-shadow flex flex-col max-md:flex-row max-md:items-center justify-center max-md:justify-between rounded-xl max-md:rounded-none p-10 max-md:py-2 max-md:px-4 gap-6 max-md:gap-0'>
             <div className='flex max-md:flex-col gap-2'>
@@ -25,8 +26,8 @@ function ReservationCard({
                 </button>
             </div>
             <div className="flex border border-gray-500 rounded-2xl max-md:hidden">
-                <AddDate type='Check-In' date={check_in} classname='border-r border-gray-500' />
-                <AddDate type='Check-Out' date={check_out} />
+                <AddDate type='Check-In' date={check_in_date.str} classname='border-r border-gray-500' />
+                <AddDate type='Check-Out' date={check_out_date.str} />
             </div>
             <div className='bg-green rounded-xl text-white text-2xl max-md:text-[1rem] flex justify-center items-center py-4 max-md:py-2 px-8'>
                 Reserve

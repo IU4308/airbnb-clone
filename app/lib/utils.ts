@@ -5,8 +5,9 @@ export const formateDate = (dateStr: string) => {
     const [weekDay, month, dayRaw, year] = [...todayStr]
     // const dayNum = Number(dayRaw)
     const day = Number(dayRaw).toString()
+    const str = `${today.getMonth() + 1}/${day}/${year}`
 
-    return { weekDay, month, day, year }
+    return { weekDay, month, day, year, str }
     // const month = todayStr[1]
     // const day = todayStr[2]
 

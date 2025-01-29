@@ -1,3 +1,4 @@
+import { ReviewType } from '@/app/lib/definitions'
 import { StarIcon } from '@heroicons/react/16/solid'
 import Image from 'next/image'
 import React from 'react'
@@ -5,12 +6,7 @@ import React from 'react'
 function Review({
     review
 }: {
-    review: {
-        name: string,
-        profile_image: string,
-        rating: number,
-        comment: string
-    }
+    review: ReviewType
 }) {
     const { name, profile_image, rating, comment } = { ...review }
     const starCount = Math.ceil(rating)
@@ -42,20 +38,15 @@ function Review({
 }
 
 function RentReviews({
-    reviews
+    rentReviews
 }: {
-    reviews: {
-        name: string,
-        profile_image: string,
-        rating: number,
-        comment: string
-    }[]
+    rentReviews: ReviewType[]
 }) {
 
     return (
         <>
             <ul className='grid grid-cols-2 max-sm:grid-cols-1 gap-6 py-4 '>
-                {reviews.map((review) => (
+                {rentReviews.map((review) => (
                     <li key={review.comment} className='pr-8'>
                         <Review review={review} />
                     </li>

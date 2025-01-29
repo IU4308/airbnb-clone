@@ -3,17 +3,18 @@ import React from 'react'
 import { StarIcon } from '@heroicons/react/16/solid'
 import { HeartIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { ItemType } from '../lib/definitions'
+import { ItemType, RentType } from '../lib/definitions'
 import { formateDate } from '../lib/utils'
 
-function HeroItem({ item }: { item: ItemType }) {
-    const { id, location, price, rating, images, check_in, check_out } = { ...item }
-    // console.log(images[0])
+function HeroItem({ rent }: { rent: RentType }) {
+    const { rent_id, location, price, rating, images, check_in, check_out } = { ...rent }
+    // console.log(JSON.stringify(images))
+    // console.log(images)
     const check_in_date = formateDate(check_in)
     const check_out_date = formateDate(check_out)
     return (
         <>
-            <Link href={`/rooms/${id}`} className='flex flex-col relative cursor-pointer gap-2 p-2'>
+            <Link href={`/rooms/${rent_id}`} className='flex flex-col relative cursor-pointer gap-2 p-2'>
                 <HeartIcon className='w-6 absolute text-white top-2 right-2' />
                 <Image
                     src={images[0]} alt='hero' width={1024} height={1024}
