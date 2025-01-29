@@ -22,8 +22,8 @@ function Header() {
             {
                 'sticky top-0': pathname === '/'
             },
-            { 'max-w-[1280]': pathname.startsWith('/rooms') },
-            { 'max-w-[2560]': !pathname.startsWith('/rooms') },
+            { 'max-w-1280': pathname.startsWith('/rooms') },
+            { 'max-w-2560': !pathname.startsWith('/rooms') },
 
         )}>
             <Link className='z-30' href='/'>
