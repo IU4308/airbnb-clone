@@ -4,9 +4,9 @@ import { useState } from 'react';
 import FormInput from '../ui/create/FormInput'
 
 
-function page() {
-    const [imgCount, setImgCount] = useState(1)
-    const [amtCount, setAmtCount] = useState(1)
+function Page() {
+    const [imgCount, setImgCount] = useState<number>(1)
+    const [amtCount, setAmtCount] = useState<number>(1)
     const handleIncrementImgCount = () => {
         setImgCount(c => c + 1)
     }
@@ -57,4 +57,4 @@ function page() {
     )
 }
 
-export default page
+export default Page
