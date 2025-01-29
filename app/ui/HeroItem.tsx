@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
 import { StarIcon } from '@heroicons/react/16/solid'
-import { HeartIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { RentType } from '../lib/definitions'
 import { formateDate } from '../lib/utils'

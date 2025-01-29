@@ -20,14 +20,21 @@ function AddToWishlist({
     id: number
 }) {
     // console.log(isInWishlist)
+    const handleDeleteFromWishlist = deleteFromWishlist.bind(null, id)
+    const handleAddToWishlist = addToWishlist.bind(null, title, image, id)
     return (
         <button
             className='flex gap-2'
-            onClick={() => {
+            onClick={
                 isInWishlist
-                    ? deleteFromWishlist(id)
-                    : addToWishlist(title, image, id)
-            }}
+                    ? handleDeleteFromWishlist
+                    : handleAddToWishlist
+            }
+        // onClick={() => {
+        //     isInWishlist
+        //         ? deleteFromWishlist(id)
+        //         : addToWishlist(title, image, id)
+        // }}
         // isInWishlist
         //     ? () => {
         //         deleteFromWishlist(id)

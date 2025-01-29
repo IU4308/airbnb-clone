@@ -1,4 +1,3 @@
-import { HeartIcon } from '@heroicons/react/24/outline';
 import RentImages from '@/app/ui/rooms/RentImages';
 import RentDetails from '@/app/ui/rooms/RentDetails';
 import ReservationCard from '@/app/ui/rooms/ReservationCard';
