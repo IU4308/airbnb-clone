@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 export default {
-  important: true,
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./Components/**/*.{js,ts,jsx,tsx,mdx}",

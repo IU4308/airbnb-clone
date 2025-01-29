@@ -15,7 +15,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.max-w-1000 {
+/* .max-w-1000 {
   @apply max-w-[1000] !important
 }
 
@@ -29,4 +29,4 @@ body {
 
 .max-h-500 {
   @apply max-h-[500] !important
-}
+} */

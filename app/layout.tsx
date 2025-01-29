@@ -16,9 +16,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`relative min-h-screen ${inter.className} antialiased`}>
-        <div className="flex justify-center">
-        </div>
+      <body className={`relative  min-h-screen ${inter.className} antialiased`}>
+        {/* <div className="flex justify-center">
+        </div> */}
         <Header />
         {children}
         <Footer />

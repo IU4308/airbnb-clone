@@ -31,7 +31,7 @@ async function HeroItem({ rent }: { rent: RentType }) {
                 </button> */}
                 <Image
                     src={images[0]} alt='hero' width={1024} height={1024}
-                    className='object-cover h-[40vh] max-h-500 rounded-lg'
+                    className='object-cover h-[40vh] max-h-[500px] rounded-lg'
                 />
                 <h1 className=' flex justify-between'>
                     <span className='font-bold'>{location}</span>

@@ -8,7 +8,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
     const rentReviews = await fetchReviewsById(Number(id));
 
     return (
-        <main className='p-10 max-w-[2560] mx-auto'>
+        <main className='p-10 max-w-7xl mx-auto'>
             <RentReviews rentReviews={rentReviews!} />
         </main>
     )
