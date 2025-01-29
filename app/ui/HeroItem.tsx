@@ -3,13 +3,11 @@ import React from 'react'
 import { StarIcon } from '@heroicons/react/16/solid'
 import { HeartIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { ItemType, RentType } from '../lib/definitions'
+import { RentType } from '../lib/definitions'
 import { formateDate } from '../lib/utils'
 
 function HeroItem({ rent }: { rent: RentType }) {
     const { rent_id, location, price, rating, images, check_in, check_out } = { ...rent }
-    // console.log(JSON.stringify(images))
-    // console.log(images)
     const check_in_date = formateDate(check_in)
     const check_out_date = formateDate(check_out)
     return (

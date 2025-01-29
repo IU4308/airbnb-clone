@@ -1,6 +1,5 @@
 import { fetchRents } from '../lib/data'
 import HeroItem from './HeroItem'
-import { list } from '@/app/lib/placeholder'
 
 async function Hero() {
     const rents = await fetchRents()

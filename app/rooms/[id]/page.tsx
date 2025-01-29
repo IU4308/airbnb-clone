@@ -4,8 +4,6 @@ import RentDetails from '@/app/ui/rooms/RentDetails';
 import ReservationCard from '@/app/ui/rooms/ReservationCard';
 import RentReviews from '@/app/ui/rooms/RentReviews';
 import Link from 'next/link';
-import { list } from '@/app/lib/placeholder'
-import { reviews } from '@/app/lib/placeholder-data'
 import { fetchRentById, fetchReviewsById } from '@/app/lib/data';
 import { formateDate } from '@/app/lib/utils';
 
@@ -13,11 +11,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
     const id = params.id;
     const rent = await fetchRentById(Number(id));
-    // console.log(rent)
-    // const item = list.find((item) => item.id === Number(id))
-    // const rentReviews = reviews.filter(review => review.rent_id === Number(id))
     const rentReviews = await fetchReviewsById(Number(id));
-    // console.log(reviews)
     const { title, images, location, price, bedrooms, beds, bathrooms, rating, description, amenities, check_in, check_out } = { ...rent };
     const reviewsCount = rentReviews?.length ?? 0
     const check_in_date = formateDate(check_in!)

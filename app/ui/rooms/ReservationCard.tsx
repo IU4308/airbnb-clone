@@ -1,6 +1,5 @@
 import React from 'react'
 import { AddDate } from '../buttons'
-import { formateDate } from '@/app/lib/utils';
 import { DateType } from '@/app/lib/definitions';
 
 function ReservationCard({
@@ -12,8 +11,6 @@ function ReservationCard({
     check_in_date: DateType;
     check_out_date: DateType;
 }) {
-    // const check_in_date = formateDate(check_in)
-    // const check_out_date = formateDate(check_out)
     return (
         <div className='w-[40%] max-md:fixed max-md:z-40 max-md:bottom-0 max-md:left-0 max-md:bg-white max-md:w-full border border-gray-200 drop-shadow flex flex-col max-md:flex-row max-md:items-center justify-center max-md:justify-between rounded-xl max-md:rounded-none p-10 max-md:py-2 max-md:px-4 gap-6 max-md:gap-0'>
             <div className='flex max-md:flex-col gap-2'>

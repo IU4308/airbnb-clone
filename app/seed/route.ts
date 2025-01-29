@@ -1,9 +1,9 @@
 import { db } from '@vercel/postgres';
 import { rents, reviews } from '@/app/lib/placeholder-data'
 
-const array = ['/img1.jpg', '/img2.jpg', 'img3.jpg']
-const jsonArr = JSON.stringify(array)
-console.log(`${jsonArr}`)
+// const array = ['/img1.jpg', '/img2.jpg', 'img3.jpg']
+// const jsonArr = JSON.stringify(array)
+// console.log(`${jsonArr}`)
 
 const client = await db.connect();
 
@@ -39,10 +39,6 @@ async function seedRentList() {
     return insertedRents;
 }
 
-async function seedImages() {
-
-}
-
 async function seedReviews() {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
@@ -74,7 +70,7 @@ export async function GET() {
     try {
         await client.sql`BEGIN`;
         await seedRentList();
-        // await seedReviews();
+        await seedReviews();
         await client.sql`COMMIT`;
 
         return Response.json({ message: 'Database seeded successfully' });
