@@ -24,7 +24,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
     const check_out_date = formateDate(check_out!)
     return (
         <main className='flex justify-center min-h-screen'>
-            <div className="w-[1280] max-xl:w-[1024] max-md:w max-lg:w-[768] max-md:w-full px-4 py-6 flex flex-col gap-6">
+            <div className="max-w-7xl max-xl:w-[1024] max-md:w max-lg:w-[768] max-md:w-full px-4 py-6 flex flex-col gap-6">
                 <div className="w-full flex justify-between items-center">
                     <span className='text-2xl font-bold'>{title}</span>
                     {/* <div className="flex gap-2 border-4"> */}

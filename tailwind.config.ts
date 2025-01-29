@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '8xl': '2560px'
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
