@@ -1,11 +1,12 @@
 import { sql } from '@vercel/postgres';
-import { RentImagesType, RentType, ReviewType } from './definitions';
+import { RentImagesType, RentType, ReviewType, WishlistItem, WishListItemCount } from './definitions';
 
 export async function fetchRents() {
     try {
         const data = await sql<RentType>`
         SELECT 
             rents.rent_id,
+            rents.title,
             rents.location,
             rents.price,
             rents.rating,
@@ -56,3 +57,31 @@ export async function fetchReviewsById(id: number) {
         console.error('Database Error:', error);
     }
 }
+
+export async function fetchWishlistItemCount(id: number) {
+    try {
+        const data = await sql<WishListItemCount>`
+            SELECT COUNT(rent_id)
+            FROM wishlist
+            WHERE rent_id = ${id};
+        `;
+        return data.rows[0]
+
+    } catch (error) {
+        console.error('Database Error:', error);
+    }
+}
+
+export async function fetchWishlistItems() {
+    try {
+        const data = await sql<WishlistItem>`
+            SELECT wishlist.id, wishlist.title, wishlist.image
+            FROM wishlist;
+        `;
+        return data.rows
+
+    } catch (error) {
+        console.error('Database Error:', error);
+    }
+}
+

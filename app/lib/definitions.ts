@@ -35,3 +35,13 @@ export type DateType = {
     year: string;
     str: string
 }
+
+export type WishlistItem = {
+    id: number;
+    title: string;
+    image: string;
+}
+
+export type WishListItemCount = {
+    count: number;
+}

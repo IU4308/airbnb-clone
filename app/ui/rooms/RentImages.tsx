@@ -8,7 +8,7 @@ function RentImages({
     id,
     images
 }: {
-    id: string;
+    id: number;
     images: string[];
 }) {
     const imageCount = images!.length
@@ -25,7 +25,7 @@ function RentImages({
                                     { 'max-md:hidden': index !== 0 },
                                 )}
                             >
-                                <ImageItem image={image} />
+                                <ImageItem image={image} classname='h-full' />
                             </li>
                         )
                     }
@@ -35,16 +35,16 @@ function RentImages({
                 {imageCount === 1 &&
                     <>
                         <li key='image-non1' className='max-md:hidden'>
-                            <ImageItem image='/image-non.jpg' />
+                            <ImageItem image='/image-non.jpg' classname='h-full' />
                         </li>
                         <li key='image-non2' className='max-md:hidden'>
-                            <ImageItem image='/image-non.jpg' />
+                            <ImageItem image='/image-non.jpg' classname='h-full' />
                         </li>
                     </>
                 }
                 {imageCount === 2 &&
                     <li key='image-non1' className='max-md:hidden'>
-                        <ImageItem image='/image-non.jpg' />
+                        <ImageItem image='/image-non.jpg' classname='h-full' />
                     </li>
                 }
 
