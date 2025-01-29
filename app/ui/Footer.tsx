@@ -9,7 +9,7 @@ function Footer() {
     const pathname = usePathname()
     const today = new Date();
     return (
-        <footer className={clsx('w-full   bg-gray-200  text-center py-2 px-8 ',
+        <footer className={clsx('w-full bg-gray-200  text-center py-2 px-8 ',
             { 'relative max-md:pb-24': pathname.startsWith('/rooms') },
             { 'absolute -bottom-16': !pathname.startsWith('/rooms') },
         )}>
