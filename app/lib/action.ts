@@ -1,8 +1,9 @@
 'use server';
 
 import { sql } from '@vercel/postgres';
+import { revalidatePath } from 'next/cache';
 
-export async function addToWishlist(title: string, image: string, rent_id: number) {
+export async function addToWishlist(title: string, image: string, rent_id: number, path: string) {
 
     try {
         await sql`
@@ -15,10 +16,12 @@ export async function addToWishlist(title: string, image: string, rent_id: numbe
             message: 'Database Error: Failed to Add to Wishlist.',
         };
     }
+    // console.log(path)
+    revalidatePath(path);
 
 }
 
-export async function deleteFromWishlist(id: number) {
+export async function deleteFromWishlist(id: number, path: string) {
     try {
         await sql`
             DELETE FROM wishlist
@@ -30,4 +33,6 @@ export async function deleteFromWishlist(id: number) {
             message: 'Database Error: Failed to Delete from Wishlist.',
         };
     }
+
+    revalidatePath(path);
 }

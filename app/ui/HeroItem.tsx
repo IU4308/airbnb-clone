@@ -23,6 +23,7 @@ async function HeroItem({ rent }: { rent: RentType }) {
                 title={title!}
                 image={images![0]}
                 id={rent_id!}
+                path='/'
             />
             <Link href={`/rooms/${rent_id}`} className='flex flex-col  cursor-pointer gap-2 p-2'>
                 {/* <button className='w-6 absolute text-white top-2 right-2 hover:opacity-50 active:opacity-40'>

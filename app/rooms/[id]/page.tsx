@@ -30,7 +30,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
                     {/* <div className="flex gap-2 border-4"> */}
                     <AddToWishlist
                         classname='w-6 h-6 '
-                        path='rent'
+                        path={`/rooms/${rent_id}`}
                         isInWishlist={isInWishlist}
                         title={title!}
                         image={images![0]}

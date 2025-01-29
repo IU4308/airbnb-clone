@@ -13,15 +13,15 @@ function AddToWishlist({
     id
 }: {
     classname: string;
-    path?: string;
+    path: string;
     isInWishlist: boolean;
     title: string;
     image: string;
     id: number
 }) {
     // console.log(isInWishlist)
-    const handleDeleteFromWishlist = deleteFromWishlist.bind(null, id)
-    const handleAddToWishlist = addToWishlist.bind(null, title, image, id)
+    const handleDeleteFromWishlist = deleteFromWishlist.bind(null, id, path)
+    const handleAddToWishlist = addToWishlist.bind(null, title, image, id, path)
     return (
         <button
             className='flex gap-2'
@@ -48,7 +48,7 @@ function AddToWishlist({
             {isInWishlist
                 ? <HeartIconSolid className={clsx('text-red-500', classname)} />
                 : <HeartIcon className={classname} />}
-            {path &&
+            {path?.startsWith('/rooms') &&
                 <span>Save{isInWishlist ? 'd' : ''}</span>
             }
 
