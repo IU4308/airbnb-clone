@@ -20,7 +20,10 @@ export default async function Home(props: {
       <Suspense key={query + currentPage} fallback={<HeroSkeleton />}>
         <Hero query={query} currentPage={currentPage} />
       </Suspense>
-      <Pagination totalPages={totalPages!} />
+      <Suspense>
+        <Pagination totalPages={totalPages!} />
+
+      </Suspense>
     </main>
   );
 }
