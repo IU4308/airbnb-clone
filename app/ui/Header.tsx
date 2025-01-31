@@ -6,7 +6,7 @@ import Search from './Search';
 import Link from 'next/link';
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import DropDown from './wishlist/DropDown';
 
 function Header() {
@@ -33,7 +33,10 @@ function Header() {
                 { 'w-[80%]': pathname === '/' }
             )}>
                 {pathname === '/' && (
-                    <Search />
+                    <Suspense>
+                        <Search />
+
+                    </Suspense>
                 )}
                 <div className='flex items-center space-x-4 cursor-pointer'>
                     <Link href='/create' className='block max-md:hidden'>
