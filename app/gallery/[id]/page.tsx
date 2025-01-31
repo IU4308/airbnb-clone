@@ -1,5 +1,6 @@
 import { fetchRentImages } from '@/app/lib/data';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 import React from 'react'
 
 async function page(props: { params: Promise<{ id: string }> }) {
@@ -7,6 +8,10 @@ async function page(props: { params: Promise<{ id: string }> }) {
     const id = params.id
     const item = await fetchRentImages(Number(id))
     const { images } = { ...item }
+
+    if (!item) {
+        notFound()
+    }
 
     return (
         <div className='flex flex-col items-center gap-4 py-8 px-6'>

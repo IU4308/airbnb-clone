@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { fetchRentById, fetchReviewsById, fetchWishlistItemCount } from '@/app/lib/data';
 import { formateDate } from '@/app/lib/utils';
 import AddToWishlist from '@/app/ui/AddToWishlist';
+import { notFound } from 'next/navigation';
 
 async function page(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
@@ -22,6 +23,11 @@ async function page(props: { params: Promise<{ id: string }> }) {
     const reviewsCount = rentReviews?.length ?? 0
     const check_in_date = formateDate(check_in!)
     const check_out_date = formateDate(check_out!)
+
+    if (!rent) {
+        notFound()
+    }
+
     return (
         <main className='flex justify-center min-h-screen'>
             <div className="max-w-7xl max-xl:w-[1024px] max-md:w max-lg:w-[768px] max-md:w-full px-4 py-6 flex flex-col gap-6">

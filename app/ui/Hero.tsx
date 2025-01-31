@@ -1,5 +1,5 @@
 
-import { fetchFilteredRents, fetchRents } from '../lib/data'
+import { fetchFilteredRents } from '../lib/data'
 import HeroItem from './HeroItem'
 
 async function Hero({

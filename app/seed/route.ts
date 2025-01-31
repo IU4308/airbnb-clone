@@ -70,7 +70,7 @@ export async function GET() {
     try {
         await client.sql`BEGIN`;
         await seedRentList();
-        // await seedReviews();
+        await seedReviews();
         await client.sql`COMMIT`;
 
         return Response.json({ message: 'Database seeded successfully' });

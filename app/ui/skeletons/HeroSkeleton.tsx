@@ -1,5 +1,3 @@
-import HeroItemSkeleton from "./HeroItemSkeleton"
-
 
 function HeroSkeleton() {
 
