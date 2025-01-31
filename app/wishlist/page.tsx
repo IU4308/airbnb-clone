@@ -2,6 +2,11 @@ import React from 'react'
 import ImageItem from '../ui/rooms/ImageItem'
 import Link from 'next/link'
 import { fetchWishlistItems } from '../lib/data'
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Wishlist',
+};
 
 async function page() {
     const items = await fetchWishlistItems()

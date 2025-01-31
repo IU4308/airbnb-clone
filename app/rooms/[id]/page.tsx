@@ -7,6 +7,11 @@ import { fetchRentById, fetchReviewsById, fetchWishlistItemCount } from '@/app/l
 import { formateDate } from '@/app/lib/utils';
 import AddToWishlist from '@/app/ui/AddToWishlist';
 import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Rental Listing',
+};
 
 async function page(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
@@ -27,6 +32,8 @@ async function page(props: { params: Promise<{ id: string }> }) {
     if (!rent) {
         notFound()
     }
+
+
 
     return (
         <main className='flex justify-center min-h-screen'>
@@ -68,7 +75,7 @@ async function page(props: { params: Promise<{ id: string }> }) {
                     />
                 </div>
                 <RentReviews
-                    rentReviews={rentReviews}
+                    rentReviews={rentReviews?.slice(0, 6)}
                 />
                 {reviewsCount > 6 &&
                     <Link href={`/reviews/${rent_id}`}>

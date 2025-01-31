@@ -5,6 +5,7 @@ import FormInput from '../ui/create/FormInput'
 import FormInputList from '../ui/create/FormInputList';
 import { createRent, State } from '../lib/action';
 
+
 function Page() {
     const [imgCount, setImgCount] = useState<number>(1)
     const [amtCount, setAmtCount] = useState<number>(1)

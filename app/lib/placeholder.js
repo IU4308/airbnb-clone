@@ -440,3 +440,77 @@ export const list = [
         check_out: "2025-07-30"
     }
 ]
+
+
+[
+    {
+        "reviewer": "John D.",
+        "profile_image": "https://example.com/reviewer1.jpg",
+        "rating": 5,
+        "date": "2025-01-15",
+        "comment": "Absolutely loved this apartment! The location was perfect, and the view from the window was breathtaking. Alice was an amazing host—very responsive and helpful. Highly recommend!"
+    },
+    {
+        "reviewer": "Emily R.",
+        "profile_image": "https://example.com/reviewer2.jpg",
+        "rating": 4.7,
+        "date": "2025-01-10",
+        "comment": "The apartment was clean and stylish, exactly as described. The only downside was a bit of street noise at night, but that's expected in downtown NYC."
+    },
+    {
+        "reviewer": "Michael B.",
+        "profile_image": "https://example.com/reviewer3.jpg",
+        "rating": 4.5,
+        "date": "2025-01-05",
+        "comment": "Great place to stay! The kitchen was fully equipped, and the bed was super comfortable. Wi-Fi was fast, which was a huge plus for my work trip."
+    },
+    {
+        "reviewer": "Sophie L.",
+        "profile_image": "https://example.com/reviewer4.jpg",
+        "rating": 5,
+        "date": "2025-01-02",
+        "comment": "This place exceeded my expectations! It was cozy, beautifully decorated, and had everything I needed for a perfect stay. Would definitely book again!"
+    },
+    {
+        "reviewer": "David H.",
+        "profile_image": "https://example.com/reviewer5.jpg",
+        "rating": 4.8,
+        "date": "2024-12-29",
+        "comment": "Alice was super friendly and made check-in a breeze. The apartment is close to everything, which made sightseeing very convenient!"
+    },
+    {
+        "reviewer": "Rachel M.",
+        "profile_image": "https://example.com/reviewer6.jpg",
+        "rating": 4.6,
+        "date": "2024-12-20",
+        "comment": "Lovely apartment with a modern touch. The only reason I'm not giving a full 5 stars is because the washer was a bit tricky to use."
+    },
+    {
+        "reviewer": "James K.",
+        "profile_image": "https://example.com/reviewer7.jpg",
+        "rating": 5,
+        "date": "2024-12-15",
+        "comment": "A perfect spot for a weekend getaway! Everything was clean and well-maintained. The bed was incredibly comfortable."
+    },
+    {
+        "reviewer": "Olivia T.",
+        "profile_image": "https://example.com/reviewer8.jpg",
+        "rating": 4.9,
+        "date": "2024-12-10",
+        "comment": "This apartment is a gem! The decor is modern and chic, and the view of the city was stunning. Definitely recommend!"
+    },
+    {
+        "reviewer": "Daniel W.",
+        "profile_image": "https://example.com/reviewer9.jpg",
+        "rating": 4.7,
+        "date": "2024-12-05",
+        "comment": "Great place with all the essentials. The only minor issue was that the dryer took a while to dry clothes."
+    },
+    {
+        "reviewer": "Sophia G.",
+        "profile_image": "https://example.com/reviewer10.jpg",
+        "rating": 5,
+        "date": "2024-12-01",
+        "comment": "Best Airbnb experience I've had! Alice was an amazing host, and the apartment had everything I needed. The location made exploring the city super easy!"
+    }
+]

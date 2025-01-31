@@ -1,6 +1,11 @@
 import { fetchReviewsById } from '@/app/lib/data';
 import RentReviews from '@/app/ui/rooms/RentReviews';
-import React from 'react'
+import React from 'react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: 'Rent Review',
+};
 
 async function page(props: { params: Promise<{ id: string }> }) {
     const params = await props.params;
