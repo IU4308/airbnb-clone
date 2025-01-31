@@ -14,7 +14,7 @@ async function seedRentList() {
             title VARCHAR(50) NOT NULL,
             location VARCHAR(50) NOT NULL,
             price INT NOT NULL,
-            rating DECIMAL(2,1) NOT NULL,
+            rating DECIMAL(2,1),
             bedrooms INT NOT NULL,
             beds INT NOT NULL,
             bathrooms INT NOT NULL,
@@ -30,9 +30,9 @@ async function seedRentList() {
 
     const insertedRents = await Promise.all(
         rents.map(async (rent) => client.sql`
-            INSERT INTO rents (rent_id, title, location, price, rating, bedrooms, beds, bathrooms, description, check_in, check_out, images, amenities)
-            VALUES (${rent.rent_id}, ${rent.title}, ${rent.location}, ${rent.price}, ${rent.rating}, ${rent.bedrooms}, ${rent.beds}, ${rent.bathrooms}, ${rent.description}, ${rent.check_in}, ${rent.check_out}, ${JSON.stringify(rent.images)}, ${JSON.stringify(rent.amenities)} )
-            ON CONFLICT (rent_id) DO NOTHING;
+            INSERT INTO rents (title, location, price, rating, bedrooms, beds, bathrooms, description, check_in, check_out, images, amenities)
+            VALUES (${rent.title}, ${rent.location}, ${rent.price}, ${rent.rating}, ${rent.bedrooms}, ${rent.beds}, ${rent.bathrooms}, ${rent.description}, ${rent.check_in}, ${rent.check_out}, ${JSON.stringify(rent.images)}, ${JSON.stringify(rent.amenities)} )
+            
         `)
     );
 
@@ -70,7 +70,7 @@ export async function GET() {
     try {
         await client.sql`BEGIN`;
         await seedRentList();
-        await seedReviews();
+        // await seedReviews();
         await client.sql`COMMIT`;
 
         return Response.json({ message: 'Database seeded successfully' });

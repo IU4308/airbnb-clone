@@ -40,7 +40,7 @@ function RentDetails({
                 <ul className='flex gap-4'>
                     <li key='rating' className='flex gap-1'>
                         <StarIcon className='w-3' />
-                        <span>{rating ? rating : 'N/A'}</span>
+                        <span>{rating ? rating : 'None'}</span>
                     </li>
                     <li key='review-count' className='list-disc list-inside'>
                         <span>{reviewsCount}</span>&nbsp;

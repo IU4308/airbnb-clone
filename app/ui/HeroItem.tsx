@@ -38,7 +38,7 @@ async function HeroItem({ rent }: { rent: RentType }) {
                     <span className='flex'>
                         <StarIcon className='w-4' />
                         <span>
-                            {rating ? rating : 'N/A'}
+                            {rating ? rating : 'None'}
                         </span>
                     </span>
                 </h1>
