@@ -27,75 +27,21 @@ function Page() {
                 action={formAction}
                 className='w-full flex flex-col items-center '
             >
-                <div className="py-4 flex flex-col gap-8 w-[1000px] max-lg:w-[750px] max-md:w-full max-md:px-8">
-                    <FormInput label='Title' placeholder='Enter a title' />
-                    <div id="title-error" aria-live="polite" aria-atomic="true">
-                        {state?.errors?.title &&
-                            state?.errors?.title.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                    {error}
-                                </p>
-                            ))}
-                    </div>
-                    <FormInput label='Location' placeholder='Enter a location' />
-                    <div id="location-error" aria-live="polite" aria-atomic="true">
-                        {state?.errors?.location &&
-                            state?.errors.location.map((error: string) => (
-                                <p className="mt-2 text-sm text-red-500" key={error}>
-                                    {error}
-                                </p>
-                            ))}
-                    </div>
-                    <FormInput label='Price' placeholder='Enter a price in USD' />
-                    {state?.errors?.price &&
-                        state?.errors.price.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    <FormInput label='Bedrooms' placeholder='Enter the number of bedrooms' />
-                    {state?.errors?.bedrooms &&
-                        state?.errors.bedrooms.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    <FormInput label='Beds' placeholder='Enter the number of beds' />
-                    {state?.errors?.beds &&
-                        state?.errors.beds.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    <FormInput label='Bathrooms' placeholder='Enter the number of bathrooms' />
-                    {state?.errors?.bathrooms &&
-                        state?.errors.bathrooms.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    <FormInput label='Description' placeholder='Enter a description' />
-                    {state?.errors?.description &&
-                        state?.errors.description.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    <FormInput label='Check_In' placeholder='Enter the check-in date in yyyy-mm-dd format' />
-                    {state?.errors?.check_in &&
-                        state?.errors?.check_in.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    <FormInput label='Check_Out' placeholder='Enter the check-out date in yyyy-mm-dd format' />
-                    {state?.errors?.check_out &&
-                        state?.errors.check_out.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    {/* <FormInput label='Images' placeholder='Enter Image URL' /> */}
+                <div className="py-4 flex flex-col  w-[1000px] max-lg:w-[750px] max-md:w-full max-md:px-8">
+                    <FormInput label='Title' placeholder='Enter a title' errors={state?.errors?.title} />
+                    <FormInput label='Location' placeholder='Enter a location' errors={state?.errors?.location} />
+                    <FormInput label='Price' placeholder='Enter a price in USD' errors={state?.errors?.price} />
+                    <FormInput label='Bedrooms' placeholder='Enter the number of bedrooms' errors={state?.errors?.bedrooms} />
+                    <FormInput label='Beds' placeholder='Enter the number of beds' errors={state?.errors?.beds} />
+
+                    <FormInput label='Bathrooms' placeholder='Enter the number of bathrooms' errors={state?.errors?.bathrooms} />
+
+                    <FormInput label='Description' placeholder='Enter a description' errors={state?.errors?.description} />
+
+                    <FormInput label='Check_In' placeholder='Enter the check-in date in yyyy-mm-dd format' errors={state?.errors?.check_in} />
+
+                    <FormInput label='Check_Out' placeholder='Enter the check-out date in yyyy-mm-dd format' errors={state?.errors?.check_out} />
+
                     {[...Array(imgCount)].map((e, i) => (
                         <FormInputList
                             key={i}
@@ -103,17 +49,11 @@ function Page() {
                             count={imgCount}
                             label='Images'
                             placeholder='Enter an image URL'
+                            errors={state?.errors?.images}
                             onIncrementImg={handleIncrementImgCount}
                         />
 
                     ))}
-                    {state?.errors?.images &&
-                        state?.errors.images.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-                    {/* <FormInput label='Amenities' placeholder='Enter amenity' /> */}
 
                     {[...Array(amtCount)].map((e, i) => (
                         <FormInputList
@@ -122,16 +62,10 @@ function Page() {
                             count={amtCount}
                             label='Amenities'
                             placeholder='Enter an amenity'
+                            errors={state?.errors?.amenities}
                             onIncrementAmt={handleIncrementAmtCount}
                         />
                     ))}
-                    {state?.errors?.amenities &&
-                        state?.errors.amenities.map((error: string) => (
-                            <p className="mt-2 text-sm text-red-500" key={error}>
-                                {error}
-                            </p>
-                        ))}
-
                     <div id="create-error" aria-live="polite" aria-atomic="true">
                         {state?.message &&
 

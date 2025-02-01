@@ -10,7 +10,6 @@ export const metadata: Metadata = {
 
 async function page() {
     const items = await fetchWishlistItems()
-    // console.log(items)
     return (
         <main className='p-10 max-sm:p-0 flex justify-center'>
             <ul className='w-ful max-w-8xl gap-y-14 p-6 grid grid-cols-4 2xl:grid-cols-5 3xl:grid-cols-6 max-xl:grid-cols-3 max-md:grid-cols-2 max-xs:grid-cols-1 max-lg:gap-2 gap-6 max-lg:gap-y-10'>
@@ -23,12 +22,6 @@ async function page() {
                         </Link>
                     </li>
                 ))}
-                {/* <li >
-                    <Link href='/rooms/1' className='flex flex-col gap-2'>
-                        <ImageItem image='/image1-1.jpg' />
-                        <p className='text-xl font-semibold'>Modern Apartment in Downtown</p>
-                    </Link>
-                </li> */}
             </ul>
 
         </main>

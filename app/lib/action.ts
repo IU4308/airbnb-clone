@@ -18,7 +18,6 @@ export async function addToWishlist(title: string, image: string, rent_id: numbe
             message: 'Database Error: Failed to Add to Wishlist.',
         };
     }
-    // console.log(path)
     revalidatePath(path);
 
 }
@@ -53,15 +52,17 @@ const FormSchema = z.object({
     price: z.coerce.number().gt(0, { message: 'Please enter a price greater than $0.' }),
     bedrooms: z.coerce.number({
         invalid_type_error: 'Please enter the number of bedrooms.',
-    }),
+    }).gt(0, { message: 'Please enter the number greater 0.' }),
     beds: z.coerce.number({
         invalid_type_error: 'Please enter the number of beds.',
-    }),
+    }).gt(0, { message: 'Please enter the number greater 0.' }),
     bathrooms: z.coerce.number({
         invalid_type_error: 'Please enter the number of bathrooms.',
-    }),
+    }).gt(0, { message: 'Please enter the number greater 0.' }),
     description: z.string({
         invalid_type_error: 'Please enter a description.',
+    }).nonempty({
+        message: 'Description should not be empty.',
     }),
     check_in: z.string().refine((date) => {
         return /^\d{4}-\d{2}-\d{2}$/.test(date);

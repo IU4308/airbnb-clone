@@ -11,7 +11,6 @@ async function HeroItem({ rent }: { rent: RentType }) {
     const { rent_id, title, location, price, rating, images, check_in, check_out } = { ...rent }
     const countObj = await fetchWishlistItemCount(rent_id)
     const isInWishlist = !!Number(countObj!.count)
-    // console.log(count)
     const check_in_date = formateDate(check_in)
     const check_out_date = formateDate(check_out)
 
@@ -26,9 +25,6 @@ async function HeroItem({ rent }: { rent: RentType }) {
                 path='/'
             />
             <Link href={`/rooms/${rent_id}`} className='flex flex-col  cursor-pointer gap-2 p-2'>
-                {/* <button className='w-6 absolute text-white top-2 right-2 hover:opacity-50 active:opacity-40'>
-                    <HeartIcon />
-                </button> */}
                 <Image
                     src={images[0]} alt={images[0].slice(0, 10)} width={1024} height={1024}
                     className='object-cover h-[40vh] max-h-[500px] rounded-lg'

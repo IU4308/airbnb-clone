@@ -10,7 +10,6 @@ async function Hero({
     currentPage: number;
 }) {
 
-    // console.log(searchParams, query, limit)
     const rents = await fetchFilteredRents(query, currentPage)
     return (
         <>

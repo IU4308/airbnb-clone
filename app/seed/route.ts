@@ -1,9 +1,6 @@
 import { db } from '@vercel/postgres';
 import { rents, reviews } from '@/app/lib/placeholder-data'
 
-// const array = ['/img1.jpg', '/img2.jpg', 'img3.jpg']
-// const jsonArr = JSON.stringify(array)
-// console.log(`${jsonArr}`)
 
 const client = await db.connect();
 
@@ -26,7 +23,6 @@ async function seedRentList() {
         );
     `;
 
-    //${jsonArr}
 
     const insertedRents = await Promise.all(
         rents.map(async (rent) => client.sql`

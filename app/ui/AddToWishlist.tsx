@@ -19,7 +19,6 @@ function AddToWishlist({
     image: string;
     id: number
 }) {
-    // console.log(isInWishlist)
     const handleDeleteFromWishlist = deleteFromWishlist.bind(null, id, path)
     const handleAddToWishlist = addToWishlist.bind(null, title, image, id, path)
     return (
@@ -30,21 +29,7 @@ function AddToWishlist({
                     ? handleDeleteFromWishlist
                     : handleAddToWishlist
             }
-        // onClick={() => {
-        //     isInWishlist
-        //         ? deleteFromWishlist(id)
-        //         : addToWishlist(title, image, id)
-        // }}
-        // isInWishlist
-        //     ? () => {
-        //         deleteFromWishlist(id)
-        //     }
-        //     : () => {
-        //         addToWishlist(title, image, id)
-        //     }
-
         >
-            {/* <> */}
             {isInWishlist
                 ? <HeartIconSolid className={clsx('text-red-500', classname)} />
                 : <HeartIcon className={classname} />}
@@ -52,7 +37,6 @@ function AddToWishlist({
                 <span>Save{isInWishlist ? 'd' : ''}</span>
             }
 
-            {/* </> */}
         </button>
     )
 }

@@ -33,14 +33,11 @@ async function page(props: { params: Promise<{ id: string }> }) {
         notFound()
     }
 
-
-
     return (
         <main className='flex justify-center min-h-screen'>
             <div className="max-w-7xl max-xl:w-[1024px] max-md:w max-lg:w-[768px] max-md:w-full px-4 py-6 flex flex-col gap-6">
                 <div className="w-full flex justify-between items-center">
                     <span className='text-2xl font-bold'>{title}</span>
-                    {/* <div className="flex gap-2 border-4"> */}
                     <AddToWishlist
                         classname='w-6 h-6 '
                         path={`/rooms/${rent_id}`}
@@ -49,9 +46,6 @@ async function page(props: { params: Promise<{ id: string }> }) {
                         image={images![0]}
                         id={rent_id!}
                     />
-                    {/* <HeartIcon className="w-6 h-6" />
-                        <span>Save</span> */}
-                    {/* </div> */}
                 </div>
                 <RentImages
                     images={images!}

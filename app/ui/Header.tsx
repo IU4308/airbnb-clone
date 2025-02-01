@@ -11,7 +11,6 @@ import DropDown from './wishlist/DropDown';
 
 function Header() {
     const pathname = usePathname()
-    // console.log(pathname, pathname.startsWith('/rooms'))
     const [isActive, setIsActive] = useState<boolean>(false)
 
     useEffect(() => {
@@ -42,7 +41,6 @@ function Header() {
                     <Link href='/create' className='block max-md:hidden'>
                         Lend your house
                     </Link>
-                    {/* <span className='max-md:hidden'>Lend your house</span> */}
                     <div
                         onClick={() => setIsActive(!isActive)}
                         className="border flex drop-shadow-md shadow-black rounded-full p-2 space-x-2">

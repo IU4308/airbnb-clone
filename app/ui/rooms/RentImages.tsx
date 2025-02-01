@@ -48,15 +48,6 @@ function RentImages({
                     </li>
                 }
 
-                {/* <li className=''>
-                    <ImageItem image={'/image1-1.jpg'} classname={'max-md:h-[40vw]'} />
-                </li>
-                <li className='max-md:hidden'>
-                    <ImageItem image={'/image1-2.jpg'} />
-                </li>
-                <li className='max-md:hidden'>
-                    <ImageItem image={'/image1-3.jpg'} />
-                </li> */}
             </ul>
             <Link href={`/gallery/${id}`}>
                 <div className="bg-white flex gap-2 absolute rounded-xl bottom-8 right-4 px-4 py-2">
